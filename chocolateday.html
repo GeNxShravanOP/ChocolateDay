@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chocolate Day for You Manu</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('chocolate-background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 4em;
+            margin-top: 50px;
+            color: #ff66b2; /* Soft pink */
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+        }
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #ff66b2; /* Pinkish tone */
+            color: white;
+            padding: 15px 25px;
+            font-size: 1.5em;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .back-button:hover {
+            background-color: #ff3385; /* Darker pink */
+        }
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5); /* Dark background for contrast */
+            border-radius: 20px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+        }
+        .mySlides {
+            display: none;
+            width: 100%;
+            border-radius: 15px;
+            transition: opacity 1s ease-in-out;
+        }
+        .slideshow-container img {
+            width: 100%;
+            border-radius: 15px;
+        }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            color: #ff66b2; /* Pink for arrows */
+            font-size: 2em;
+            padding: 16px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            cursor: pointer;
+            user-select: none;
+            transition: background-color 0.3s ease;
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .prev {
+            left: 0;
+            transform: translateY(-50%);
+        }
+        .next {
+            right: 0;
+            transform: translateY(-50%);
+        }
+        .message {
+            font-size: 2em;
+            margin-top: 40px;
+            font-family: 'Brush Script MT', cursive;
+            color: #ff66b2; /* Pink text */
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+        }
+        .heart {
+            color: #ff3385; /* Darker pink */
+            font-size: 3em;
+            animation: heartbeat 1.5s infinite alternate;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.2); }
+        }
+        .flowers {
+            font-size: 2em;
+            color: #ff80cc; /* Soft pink */
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+<a href="celebrate.html"
+    <button class="back-button">← Back</button>
+</a>
+    <h1>Wishing You a Chocolaty Chocolate Day</h1>
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="Early Dates.jpg" alt="Chocolate 1">
+        </div>
+        <div class="mySlides fade">
+            <img src="Garba Date.jpg" alt="Chocolate 2">
+        </div>
+        <div class="mySlides fade">
+            <img src="Christmas Date.jpg" alt="Chocolate 3">
+        </div>
+        <!-- Navigation arrows -->
+        <span class="prev" onclick="plusSlides(-1)">&#10094;</span>
+        <span class="next" onclick="plusSlides(1)">&#10095;</span>
+    </div>
+    <div class="message">
+        <p>From not very chocolate boy, <span class="heart">❤️</span></p>
+    </div>
+    <div class="flowers">
+        <p>🌸🌹🌼</p>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("mySlides");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
+
+        function plusSlides(n) {
+            slideIndex += n;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            if (slideIndex < 1) { slideIndex = slides.length }
+            showSlides();
+        }
+    </script>
+</body>
+</html>
